@@ -1,0 +1,70 @@
+
+<!doctype html>
+<html lang="zh">
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>在浏览器上使用</title>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vditor/dist/index.css" />
+    
+
+    
+
+    
+    <script src="./../assets/front-end-lib/all_components.js"></script>
+    
+        
+        
+        
+
+
+    
+
+    <link rel="stylesheet" href="./../assets/js_css/theme.css">
+    <link rel="stylesheet" href="./../assets/js_css/github-markdown-css.css">
+</head>
+
+
+
+<main id="static_app_llej" class="markdown-body">
+    <main data-type="NodeDocument" data-n-id="20201004184819-nj8ibyg" type="doc" updated="20210522214354" data-n-id="20201004184819-nj8ibyg"><h1 data-type="NodeDocument" data-n-id="20201004184819-nj8ibyg" type="doc" updated="20210522214354" data-n-id="20201004184819-nj8ibyg">在浏览器上使用</h1>
+<h2 id="浏览器用法" id="20210104090909-6pyfjgx" data-type="NodeHeading" data-n-id="20210104090909-6pyfjgx">浏览器用法<a id="vditorAnchor-浏览器用法" class="vditor-anchor" href="#浏览器用法"><img src="./../assets/icon/alink.png" /></a></h2>
+<p updated="20210302223612" data-type="NodeParagraph" data-n-id="20210104090909-3fkdb8b">思源桌面端是基于 <a href="https://www.electronjs.org">Electron</a> 打包的独立应用，但这并不唯一的使用方式。只要启动思源内核后，就能在浏览器上直接使用了，支持移动端浏览器。</p>
+<ul data-type="NodeList" data-n-id="20210104090909-z9210o7">
+<li data-type="NodeListItem" data-n-id="20210104090909-5occty9"><span class="ListItemDot"></span>
+<p data-type="NodeParagraph" data-n-id="20210302223610-ngnee0k">桌面端网页版：使用体验几乎和 Electron 独立应用一致</p>
+</li>
+<li data-type="NodeListItem" data-n-id="20210104090909-ipt2k4r"><span class="ListItemDot"></span>
+<p data-type="NodeParagraph" data-n-id="20210302223610-hnshr1s">移动端网页版：为移动端使用体验设计</p>
+</li>
+</ul>
+<p data-type="NodeParagraph" data-n-id="20210104090909-5ucwkfd">访问 <code data-type="NodeCodeSpan">http://127.0.0.1:6806/</code> 后会自动根据浏览器版本切换桌面端或移动端。</p>
+<p data-type="NodeParagraph" data-n-id="20210104090909-z2r76p3">如果需要在局域网内使用，将 <code data-type="NodeCodeSpan">127.0.0.1</code> 换成局域网 IP 地址即可。除了本地局域网使用，这里提供两个自助方案实现公网使用：</p>
+<ul data-type="NodeList" data-n-id="20210104090909-dcl5tif">
+<li data-type="NodeListItem" data-n-id="20210104090909-qoham0m"><span class="ListItemDot"></span>
+<p data-type="NodeParagraph" data-n-id="20210302223610-18yksf1">通过“内网穿透”技术将本地内核服务发布在公网上（较为麻烦且不稳定，不推荐）</p>
+</li>
+<li data-type="NodeListItem" data-n-id="20210104090909-mtbso6l"><span class="ListItemDot"></span>
+<p data-type="NodeParagraph" data-n-id="20210302223610-l2uqi6m">自行搭建思源服务端（推荐）</p>
+</li>
+</ul>
+<p updated="20210522214253" data-type="NodeParagraph" data-n-id="20210104090909-9ldxx4v">在着手前，请从了解<a href="https://ld246.com/article/1619868273581#%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84">思源笔记技术架构</a>开始。</p>
+<h3 id="访问鉴权" data-type="NodeHeading" data-n-id="20210104090909-9x9sqe8">访问鉴权<a id="vditorAnchor-访问鉴权" class="vditor-anchor" href="#访问鉴权"><img src="./../assets/icon/alink.png" /></a></h3>
+<p updated="20210522214354" data-type="NodeParagraph" data-n-id="20210104090909-20f2hvi">在 <kbd>设置</kbd> - <kbd>关于</kbd> 中可配置浏览器访问鉴权密码，留空表示不启用鉴权。这在开放网络（比如办公场所和公网）会比较有用，只有鉴权通过后才能进入工作空间。</p>
+<p data-type="NodeParagraph" data-n-id="20210117210851-87cdi7m"></p>
+</main><div class="oceanpress-backLink"><h2>链接到此文档的相关文档</h2>
+<oceanpress-embedded-block src="../%e9%80%9a%e7%94%a8%e6%93%8d%e4%bd%9c/%e7%aa%97%e5%8f%a3%e5%92%8c%e9%a1%b5%e7%ad%be.html#20210104091259-86iaf33" title="../通用操作/窗口和页签.html#20210104091259-86iaf33">
+    <p updated="20210401004103" data-type="NodeParagraph" data-n-id="20210104091259-86iaf33">如果你正在使用的设备屏幕较小，可以考虑<oceanpress-block-ref src="../%e9%80%9a%e7%94%a8%e6%93%8d%e4%bd%9c/%e5%9c%a8%e6%b5%8f%e8%a7%88%e5%99%a8%e4%b8%8a%e4%bd%bf%e7%94%a8.html#20201004184819-nj8ibyg" title="通过浏览器使用"><a href="../%e9%80%9a%e7%94%a8%e6%93%8d%e4%bd%9c/%e5%9c%a8%e6%b5%8f%e8%a7%88%e5%99%a8%e4%b8%8a%e4%bd%bf%e7%94%a8.html#20201004184819-nj8ibyg">通过浏览器使用</a></oceanpress-block-ref >，这样就能通过浏览器实例进行界面切换。</p>
+</oceanpress-embedded-block>
+
+<oceanpress-embedded-block src="../3%20%e5%b8%b8%e8%a7%81%e9%97%ae%e9%a2%98%e4%b8%8e%e8%a7%a3%e7%ad%94.html#20201224120447-pm4sntk" title="../3 常见问题与解答.html#20201224120447-pm4sntk">
+    <p data-type="NodeParagraph" data-n-id="20201224120447-pm4sntk">思源支持<oceanpress-block-ref src="../%e9%80%9a%e7%94%a8%e6%93%8d%e4%bd%9c/%e5%9c%a8%e6%b5%8f%e8%a7%88%e5%99%a8%e4%b8%8a%e4%bd%bf%e7%94%a8.html#20201004184819-nj8ibyg" title="在浏览器上使用"><a href="../%e9%80%9a%e7%94%a8%e6%93%8d%e4%bd%9c/%e5%9c%a8%e6%b5%8f%e8%a7%88%e5%99%a8%e4%b8%8a%e4%bd%bf%e7%94%a8.html#20201004184819-nj8ibyg">在浏览器上使用</a></oceanpress-block-ref >，可以通过浏览器插件来扩展功能。我们很期待其他开发者为思源编写浏览器插件。随着<oceanpress-block-ref src="../%e9%80%9a%e7%94%a8%e6%93%8d%e4%bd%9c/Docker%20%e4%bc%ba%e6%9c%8d.html#20201227194925-7ipoiv6" title="内核 API"><a href="../%e9%80%9a%e7%94%a8%e6%93%8d%e4%bd%9c/Docker%20%e4%bc%ba%e6%9c%8d.html#20201227194925-7ipoiv6">内核 API</a></oceanpress-block-ref > 的逐步提供，后续我们会引入插件机制。</p>
+</oceanpress-embedded-block>
+</div>
+</main>
