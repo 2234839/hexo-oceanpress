@@ -163,7 +163,7 @@ sidebar:
 # Sidebar Avatar
 avatar:
   # Replace the default image and set the url here.
-  url: #/images/avatar.gif
+  url: /avatar.png
   # If true, the avatar will be dispalyed in circle.
   rounded: false
   # If true, the avatar will be rotated with the cursor.
@@ -201,7 +201,8 @@ links_settings:
   layout: block
 
 links:
-  #Title: http://yoursite.com
+  崮生的博客: //shenzilong.cn
+  OceanPress: https://github.com/siyuan-note/oceanpress
 
 # Table of Contents in the Sidebar
 # Front-matter variable (unsupport wrap expand_all).
