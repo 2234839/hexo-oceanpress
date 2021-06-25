@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/hexo-oceanpress/public/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/hexo-oceanpress/public/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/hexo-oceanpress/public/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/hexo-oceanpress/public/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/hexo-oceanpress/public/css/main.css">
+
+
+<link rel="stylesheet" href="/hexo-oceanpress/public/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"2234839.github.io","root":"/hexo-oceanpress/public/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="4 文档块和标题块的转换                                                                                            4 文档块和标题块的转换 文档块和标题块的对应关系 标题块和文档块具有天然的对应关系，因为：   每一个文档块都有一个名称   每一个标题块">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="https://2234839.github.io/hexo-oceanpress/public/oceanpress/%E5%86%85%E5%AE%B9%E5%9D%97/4%20%E6%96%87%E6%A1%A3%E5%9D%97%E5%92%8C%E6%A0%87%E9%A2%98%E5%9D%97%E7%9A%84%E8%BD%AC%E6%8D%A2.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="4 文档块和标题块的转换                                                                                            4 文档块和标题块的转换 文档块和标题块的对应关系 标题块和文档块具有天然的对应关系，因为：   每一个文档块都有一个名称   每一个标题块">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://2234839.github.io/hexo-oceanpress/public/oceanpress/assets/icon/alink.png">
+<meta property="og:image" content="https://2234839.github.io/hexo-oceanpress/public/oceanpress/assets/icon/alink.png">
+<meta property="og:image" content="https://2234839.github.io/hexo-oceanpress/public/oceanpress/assets/icon/alink.png">
+<meta property="article:published_time" content="2021-06-25T15:26:03.817Z">
+<meta property="article:modified_time" content="2021-06-25T15:26:03.817Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://2234839.github.io/hexo-oceanpress/public/oceanpress/assets/icon/alink.png">
+
+<link rel="canonical" href="https://2234839.github.io/hexo-oceanpress/public/oceanpress/%E5%86%85%E5%AE%B9%E5%9D%97/4%20%E6%96%87%E6%A1%A3%E5%9D%97%E5%92%8C%E6%A0%87%E9%A2%98%E5%9D%97%E7%9A%84%E8%BD%AC%E6%8D%A2">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : false,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title> | Hexo
+</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/hexo-oceanpress/public/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Hexo</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/hexo-oceanpress/public/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/hexo-oceanpress/public/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+  
+  
+
+          <div class="content page posts-expand">
+            
+
+    
+    
+    
+    <div class="post-block" lang="zh-CN">
+      <header class="post-header">
+
+<h1 class="post-title" itemprop="name headline">
+</h1>
+
+<div class="post-meta">
+  
+  <ul class="breadcrumb">
+          
+            <li><a href="/hexo-oceanpress/public/oceanpress/">OCEANPRESS</a></li>
+            <li><a href="/hexo-oceanpress/public/oceanpress/%E5%86%85%E5%AE%B9%E5%9D%97/">内容块</a></li>
+            <li>4 文档块和标题块的转换</li>
+          
+  </ul>
+
+</div>
+
+</header>
+
+      
+      
+      
+      <div class="post-body">
+          
+<!doctype html>
+<html lang="zh">
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>4 文档块和标题块的转换</title>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vditor/dist/index.css" />
+    
+
+    
+
+    
+    <script src="./../assets/front-end-lib/all_components.js"></script>
+    
+        
+        
+        
+
+
+    
+
+    <link rel="stylesheet" href="./../assets/js_css/theme.css">
+    <link rel="stylesheet" href="./../assets/js_css/github-markdown-css.css">
+</head>
+
+
+
+<main id="static_app_llej" class="markdown-body">
+    <main data-type="NodeDocument" data-n-id="20201210103036-1x3vm8t" type="doc" updated="20210302223315" data-n-id="20201210103036-1x3vm8t"><h1 data-type="NodeDocument" data-n-id="20201210103036-1x3vm8t" type="doc" updated="20210302223315" data-n-id="20201210103036-1x3vm8t">4 文档块和标题块的转换</h1>
+<h2 id="文档块和标题块的对应关系" data-type="NodeHeading" data-n-id="20210104090801-7whehbb">文档块和标题块的对应关系<a id="vditorAnchor-文档块和标题块的对应关系" class="vditor-anchor" href="#文档块和标题块的对应关系"><img src="./../assets/icon/alink.png" /></a></h2>
+<p updated="20210302223315" data-type="NodeParagraph" data-n-id="20210104090801-1dpx3hw">标题块和文档块具有天然的对应关系，因为：</p>
+<ul data-type="NodeList" data-n-id="20210104090801-ixsk5op">
+<li data-type="NodeListItem" data-n-id="20210104090801-54u65x0"><span class="ListItemDot"></span>
+<p data-type="NodeParagraph" data-n-id="20210302223313-sdi6o2t">每一个文档块都有一个名称</p>
+</li>
+<li data-type="NodeListItem" data-n-id="20210104090801-5lx1ywu"><span class="ListItemDot"></span>
+<p data-type="NodeParagraph" data-n-id="20210302223313-bsreel3">每一个标题块也都有一个名称</p>
+</li>
+</ul>
+<p data-type="NodeParagraph" data-n-id="20210104090801-b9mbgmu">所以我们可以在文档块和标题块之间进行相互转换。另外，因为内容块是根据 id 进行引用的，所以转换过程不会破坏已有的引用关系。</p>
+<h2 id="将文档块转换为标题块" data-type="NodeHeading" data-n-id="20210104090801-tojy8es">将文档块转换为标题块<a id="vditorAnchor-将文档块转换为标题块" class="vditor-anchor" href="#将文档块转换为标题块"><img src="./../assets/icon/alink.png" /></a></h2>
+<p data-type="NodeParagraph" data-n-id="20210104090801-q0rn7el">在文档树上，选择需要转换为标题块的文档，然后将其拖拽到编辑器页签中需要插入的位置。这里有两种情况：</p>
+<ol data-type="NodeList" data-n-id="20210104090801-3ousg98">
+<li data-type="NodeListItem" data-n-id="20210104090801-6whvehe"><span class="ListItemDot">1.</span>
+<p data-type="NodeParagraph" data-n-id="20210302223313-lve2bd1">将文档块放置到已有标题块上，此时文档块将作为该标题块的平级节点插入到下方</p>
+</li>
+<li data-type="NodeListItem" data-n-id="20210104090801-mf8nr7i"><span class="ListItemDot">2.</span>
+<p data-type="NodeParagraph" data-n-id="20210302223313-f0k4v2v">将文档块放置到非标题块上，此时文档块将作为该块所属标题块的子节点插入</p>
+</li>
+</ol>
+<p data-type="NodeParagraph" data-n-id="20210104090801-e7sxz6z">文档块转换为标题块后：</p>
+<ul data-type="NodeList" data-n-id="20210104090801-2ddk3ds">
+<li data-type="NodeListItem" data-n-id="20210104090801-jz1znbt"><span class="ListItemDot"></span>
+<p data-type="NodeParagraph" data-n-id="20210302223313-cdy6sgh">原文档名将变为标题名</p>
+</li>
+<li data-type="NodeListItem" data-n-id="20210104090801-ndykhp0"><span class="ListItemDot"></span>
+<p data-type="NodeParagraph" data-n-id="20210302223313-vjvzwqe">逻辑上文档块是一级标题，会根据插入位置进行相对层级变更</p>
+</li>
+<li data-type="NodeListItem" data-n-id="20210104090801-b2nqr6d"><span class="ListItemDot"></span>
+<p data-type="NodeParagraph" data-n-id="20210302223313-i6rh8oh">原文档内的各标题层级会根据插入位置进行调整</p>
+<ul data-type="NodeList" data-n-id="20210104090801-1q24tjm">
+<li data-type="NodeListItem" data-n-id="20210104090801-036y0g8"><span class="ListItemDot"></span>
+<p data-type="NodeParagraph" data-n-id="20210302223313-des2ctj">对于上述情况一：比如原文档内包含一、二、三级标题，插入位置是一个二级标题，则文档块转换后的标题块会是一个二级标题，原来内容中的一、二、三级标题会变为二、三、四级标题</p>
+</li>
+<li data-type="NodeListItem" data-n-id="20210104090801-3xknfkq"><span class="ListItemDot"></span>
+<p data-type="NodeParagraph" data-n-id="20210302223313-ls5q1hm">对于上述情况二：比如原文档内包含一、二、三级标题，插入位置是一个二级标题下的段落块，则文档块转换后的标题块会是一个三级标题，原来内容中的 一、二、三级标题会变为三、四、五级标题</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="将标题块转换为文档块" data-type="NodeHeading" data-n-id="20210104090801-s48mpeu">将标题块转换为文档块<a id="vditorAnchor-将标题块转换为文档块" class="vditor-anchor" href="#将标题块转换为文档块"><img src="./../assets/icon/alink.png" /></a></h2>
+<p data-type="NodeParagraph" data-n-id="20210104090801-9kyqggg">在编辑器页签中选择需要转换的标题块，按住该标题块标识图标，然后将其拖拽到文档树需要放置的文件夹中。如果需要放置到笔记本根文件夹上，就将标题块标识图标拖动到顶层的笔记本图标这一行上。</p>
+<p data-type="NodeParagraph" data-n-id="20210104090801-z3yxgmt">标题块转换为文档块后：</p>
+<ul data-type="NodeList" data-n-id="20210104090801-2clqrmr">
+<li data-type="NodeListItem" data-n-id="20210104090801-u88ud0z"><span class="ListItemDot"></span>
+<p data-type="NodeParagraph" data-n-id="20210302223313-c3uu9qe">标题名将变为文档名</p>
+</li>
+<li data-type="NodeListItem" data-n-id="20210104090801-yg8oign"><span class="ListItemDot"></span>
+<p data-type="NodeParagraph" data-n-id="20210302223313-g1q27b1">原标题块下如果有子标题，则会按照这些子标题中最大的层级作为新文档中一级标题，其余子标题会根据相对层级进行调整</p>
+<ul data-type="NodeList" data-n-id="20210104090801-p8uc6ob">
+<li data-type="NodeListItem" data-n-id="20210104090801-q88ezjk"><span class="ListItemDot"></span>
+<p data-type="NodeParagraph" data-n-id="20210302223313-6qh35f3">比如原标题块下包含了三、四、五级子标题，则转换为文档块后会将这些子标题转换为一、二、三级标题</p>
+</li>
+</ul>
+</li>
+</ul>
+</main><div class="oceanpress-backLink"></div>
+</main>
+
+      </div>
+      
+      
+      
+    </div>
+    
+  <ul class="breadcrumb">
+          
+            <li><a href="/hexo-oceanpress/public/oceanpress/">OCEANPRESS</a></li>
+            <li><a href="/hexo-oceanpress/public/oceanpress/%E5%86%85%E5%AE%B9%E5%9D%97/">内容块</a></li>
+            <li>4 文档块和标题块的转换</li>
+          
+  </ul>
+
+    
+    
+    
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#static_app_llej"><span class="nav-number">1.</span> <span class="nav-text">4 文档块和标题块的转换</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%87%E6%A1%A3%E5%9D%97%E5%92%8C%E6%A0%87%E9%A2%98%E5%9D%97%E7%9A%84%E5%AF%B9%E5%BA%94%E5%85%B3%E7%B3%BB"><span class="nav-number">1.1.</span> <span class="nav-text">文档块和标题块的对应关系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%86%E6%96%87%E6%A1%A3%E5%9D%97%E8%BD%AC%E6%8D%A2%E4%B8%BA%E6%A0%87%E9%A2%98%E5%9D%97"><span class="nav-number">1.2.</span> <span class="nav-text">将文档块转换为标题块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%86%E6%A0%87%E9%A2%98%E5%9D%97%E8%BD%AC%E6%8D%A2%E4%B8%BA%E6%96%87%E6%A1%A3%E5%9D%97"><span class="nav-number">1.3.</span> <span class="nav-text">将标题块转换为文档块</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">John Doe</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/hexo-oceanpress/public/archives/">
+        
+          <span class="site-state-item-count">1</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/hexo-oceanpress/public/lib/anime.min.js"></script>
+  <script src="/hexo-oceanpress/public/lib/velocity/velocity.min.js"></script>
+  <script src="/hexo-oceanpress/public/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/hexo-oceanpress/public/js/utils.js"></script>
+
+<script src="/hexo-oceanpress/public/js/motion.js"></script>
+
+
+<script src="/hexo-oceanpress/public/js/schemes/muse.js"></script>
+
+
+<script src="/hexo-oceanpress/public/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

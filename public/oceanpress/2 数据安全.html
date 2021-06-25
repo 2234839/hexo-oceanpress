@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/hexo-oceanpress/public/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/hexo-oceanpress/public/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/hexo-oceanpress/public/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/hexo-oceanpress/public/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/hexo-oceanpress/public/css/main.css">
+
+
+<link rel="stylesheet" href="/hexo-oceanpress/public/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"2234839.github.io","root":"/hexo-oceanpress/public/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="2 数据安全                                                                                            2 数据安全 概述 数据安全主要分为两方面：   可用性：数据不丢失、不冲突，保持数据的完整和一致   机密性：数据不被泄漏、不被篡改   思源对这两方">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="https://2234839.github.io/hexo-oceanpress/public/oceanpress/2%20%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="2 数据安全                                                                                            2 数据安全 概述 数据安全主要分为两方面：   可用性：数据不丢失、不冲突，保持数据的完整和一致   机密性：数据不被泄漏、不被篡改   思源对这两方">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://2234839.github.io/hexo-oceanpress/public/oceanpress/assets/icon/alink.png">
+<meta property="og:image" content="https://2234839.github.io/hexo-oceanpress/public/oceanpress/assets/icon/alink.png">
+<meta property="og:image" content="https://2234839.github.io/hexo-oceanpress/public/oceanpress/assets/icon/alink.png">
+<meta property="og:image" content="https://2234839.github.io/hexo-oceanpress/public/oceanpress/assets/icon/alink.png">
+<meta property="article:published_time" content="2021-06-25T15:26:01.950Z">
+<meta property="article:modified_time" content="2021-06-25T15:26:01.950Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://2234839.github.io/hexo-oceanpress/public/oceanpress/assets/icon/alink.png">
+
+<link rel="canonical" href="https://2234839.github.io/hexo-oceanpress/public/oceanpress/2%20%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : false,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title> | Hexo
+</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/hexo-oceanpress/public/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Hexo</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/hexo-oceanpress/public/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/hexo-oceanpress/public/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+  
+  
+
+          <div class="content page posts-expand">
+            
+
+    
+    
+    
+    <div class="post-block" lang="zh-CN">
+      <header class="post-header">
+
+<h1 class="post-title" itemprop="name headline">
+</h1>
+
+<div class="post-meta">
+  
+
+</div>
+
+</header>
+
+      
+      
+      
+      <div class="post-body">
+          
+<!doctype html>
+<html lang="zh">
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>2 数据安全</title>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vditor/dist/index.css" />
+    
+
+    
+
+    
+    <script src="./assets/front-end-lib/all_components.js"></script>
+    
+        
+        
+        
+
+
+    
+
+    <link rel="stylesheet" href="./assets/js_css/theme.css">
+    <link rel="stylesheet" href="./assets/js_css/github-markdown-css.css">
+</head>
+
+
+
+<main id="static_app_llej" class="markdown-body">
+    <main data-type="NodeDocument" data-n-id="20210117211155-56n4odu" type="doc" updated="20210525221031" data-n-id="20210117211155-56n4odu"><h1 data-type="NodeDocument" data-n-id="20210117211155-56n4odu" type="doc" updated="20210525221031" data-n-id="20210117211155-56n4odu">2 数据安全</h1>
+<h2 id="概述" data-type="NodeHeading" data-n-id="20210117212652-vpmkfab">概述<a id="vditorAnchor-概述" class="vditor-anchor" href="#概述"><img src="./assets/icon/alink.png" /></a></h2>
+<p updated="20210302223432" data-type="NodeParagraph" data-n-id="20210117212533-b9xm7h6">数据安全主要分为两方面：</p>
+<ul updated="20210525220618" data-type="NodeList" data-n-id="20210302223430-kskwppo">
+<li data-type="NodeListItem" data-n-id="20210525220618-mb42ynt"><span class="ListItemDot"></span>
+<p data-type="NodeParagraph" data-n-id="20210525220618-ctad9jk">可用性：数据不丢失、不冲突，保持数据的完整和一致</p>
+</li>
+<li data-type="NodeListItem" data-n-id="20210525220623-i1o11y5"><span class="ListItemDot"></span>
+<p updated="20210525220623" data-type="NodeParagraph" data-n-id="20210525220623-f3ugyow">机密性：数据不被泄漏、不被篡改</p>
+</li>
+</ul>
+<p updated="20210525214350" data-type="NodeParagraph" data-n-id="20210117213032-48sgu29">思源对这两方面都进行了一定支持，下面是关于数据安全方面的说明。</p>
+<h2 id="明文存储" data-type="NodeHeading" data-n-id="20210117213252-rjh6iu2">明文存储<a id="vditorAnchor-明文存储" class="vditor-anchor" href="#明文存储"><img src="./assets/icon/alink.png" /></a></h2>
+<p updated="20210525214719" data-type="NodeParagraph" data-n-id="20210525214530-69ml3fo">思源使用明文方式将数据存储在本地文件系统上，这意味着：</p>
+<ul data-type="NodeList" data-n-id="20210117213258-m2gevi3">
+<li data-type="NodeListItem" data-n-id="20210117213526-cy3oj8v"><span class="ListItemDot"></span>
+<p updated="20210525214730" data-type="NodeParagraph" data-n-id="20210302223430-44dbhvt">任何能够使用操作系统的人或软件都读取其中的数据</p>
+</li>
+<li data-type="NodeListItem" data-n-id="20210117213528-fp23mvh"><span class="ListItemDot"></span>
+<p updated="20210501163203" data-type="NodeParagraph" data-n-id="20210302223430-1hpa148">数据的可用性依赖于硬件磁盘和操作系统的可用性</p>
+</li>
+</ul>
+<h2 id="端到端加密备份" id="20210117211513-nelhsjf" data-type="NodeHeading" data-n-id="20210117211513-nelhsjf">端到端加密备份<a id="vditorAnchor-端到端加密备份" class="vditor-anchor" href="#端到端加密备份"><img src="./assets/icon/alink.png" /></a></h2>
+<p updated="20210525215811" data-type="NodeParagraph" data-n-id="20210525215124-ifljpao">思源对工作空间生成备份时会进行加密，备份数据可以放心地进行网络传输和托管。</p>
+<ul updated="20210525220029" data-type="NodeList" data-n-id="20210525215316-438zsvu">
+<li data-type="NodeListItem" data-n-id="20210525220029-7myvzw8"><span class="ListItemDot"></span>
+<p updated="20210525220334" data-type="NodeParagraph" data-n-id="20210525220029-c9i66lb">端到端加密，加解密完全在本地进行</p>
+</li>
+<li data-type="NodeListItem" data-n-id="20210525220320-a9li63c"><span class="ListItemDot"></span>
+<p updated="20210525220426" data-type="NodeParagraph" data-n-id="20210525220320-h0rm7h0">加密算法为业界公认安全的 AES GCM</p>
+</li>
+<li data-type="NodeListItem" data-n-id="20210525220037-h0i8gm5"><span class="ListItemDot"></span>
+<p updated="20210525220458" data-type="NodeParagraph" data-n-id="20210525220037-5vclp4i">除非知道密码或者暴力破解，否则不可能被解密（开发者也无法解密）</p>
+</li>
+<li data-type="NodeListItem" data-n-id="20210525220057-l8oobjx"><span class="ListItemDot"></span>
+<p updated="20210525220127" data-type="NodeParagraph" data-n-id="20210525220057-j32ssb4">密码不进行存储，加密解密时需要使用者输入</p>
+</li>
+</ul>
+<h2 id="建议" data-type="NodeHeading" data-n-id="20210117212440-bkk6f95">建议<a id="vditorAnchor-建议" class="vditor-anchor" href="#建议"><img src="./assets/icon/alink.png" /></a></h2>
+<ul data-type="NodeList" data-n-id="20210117214728-szj3mg9">
+<li data-type="NodeListItem" data-n-id="20210117215237-1mbl2ly"><span class="ListItemDot"></span>
+<p updated="20210525221031" data-type="NodeParagraph" data-n-id="20210302223430-wz2k547">定期将数据同时备份到云端和离线设备上</p>
+</li>
+<li data-type="NodeListItem" data-n-id="20210117214814-lm8tmiq"><span class="ListItemDot"></span>
+<p updated="20210524220935" data-type="NodeParagraph" data-n-id="20210302223430-u4v0huy">重要密码、密钥或者核心机密等建议使用专用软件、设备或者离线保存</p>
+</li>
+</ul>
+</main><div class="oceanpress-backLink"></div>
+</main>
+
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    
+    
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#static_app_llej"><span class="nav-number">1.</span> <span class="nav-text">2 数据安全</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A6%82%E8%BF%B0"><span class="nav-number">1.1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%98%8E%E6%96%87%E5%AD%98%E5%82%A8"><span class="nav-number">1.2.</span> <span class="nav-text">明文存储</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AB%AF%E5%88%B0%E7%AB%AF%E5%8A%A0%E5%AF%86%E5%A4%87%E4%BB%BD"><span class="nav-number">1.3.</span> <span class="nav-text">端到端加密备份</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BB%BA%E8%AE%AE"><span class="nav-number">1.4.</span> <span class="nav-text">建议</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">John Doe</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/hexo-oceanpress/public/archives/">
+        
+          <span class="site-state-item-count">1</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/hexo-oceanpress/public/lib/anime.min.js"></script>
+  <script src="/hexo-oceanpress/public/lib/velocity/velocity.min.js"></script>
+  <script src="/hexo-oceanpress/public/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/hexo-oceanpress/public/js/utils.js"></script>
+
+<script src="/hexo-oceanpress/public/js/motion.js"></script>
+
+
+<script src="/hexo-oceanpress/public/js/schemes/muse.js"></script>
+
+
+<script src="/hexo-oceanpress/public/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

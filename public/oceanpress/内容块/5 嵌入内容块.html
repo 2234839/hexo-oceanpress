@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/hexo-oceanpress/public/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/hexo-oceanpress/public/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/hexo-oceanpress/public/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/hexo-oceanpress/public/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/hexo-oceanpress/public/css/main.css">
+
+
+<link rel="stylesheet" href="/hexo-oceanpress/public/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"2234839.github.io","root":"/hexo-oceanpress/public/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="5 嵌入内容块                                                                                            5 嵌入内容块 概述 嵌入内容块主要用于汇总所需内容块，通过 &amp;#123;&amp;#123; 和 &amp;#125;&amp;#125; 将 SQL 脚本包裹起来并独占一">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="https://2234839.github.io/hexo-oceanpress/public/oceanpress/%E5%86%85%E5%AE%B9%E5%9D%97/5%20%E5%B5%8C%E5%85%A5%E5%86%85%E5%AE%B9%E5%9D%97.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="5 嵌入内容块                                                                                            5 嵌入内容块 概述 嵌入内容块主要用于汇总所需内容块，通过 &amp;#123;&amp;#123; 和 &amp;#125;&amp;#125; 将 SQL 脚本包裹起来并独占一">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://2234839.github.io/hexo-oceanpress/public/oceanpress/assets/icon/alink.png">
+<meta property="og:image" content="https://2234839.github.io/hexo-oceanpress/public/oceanpress/assets/icon/alink.png">
+<meta property="og:image" content="https://2234839.github.io/hexo-oceanpress/public/oceanpress/assets/icon/alink.png">
+<meta property="og:image" content="https://2234839.github.io/hexo-oceanpress/public/oceanpress/assets/icon/alink.png">
+<meta property="og:image" content="https://2234839.github.io/hexo-oceanpress/public/oceanpress/assets/icon/alink.png">
+<meta property="article:published_time" content="2021-06-25T15:26:04.670Z">
+<meta property="article:modified_time" content="2021-06-25T15:26:04.670Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://2234839.github.io/hexo-oceanpress/public/oceanpress/assets/icon/alink.png">
+
+<link rel="canonical" href="https://2234839.github.io/hexo-oceanpress/public/oceanpress/%E5%86%85%E5%AE%B9%E5%9D%97/5%20%E5%B5%8C%E5%85%A5%E5%86%85%E5%AE%B9%E5%9D%97">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : false,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title> | Hexo
+</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/hexo-oceanpress/public/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Hexo</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/hexo-oceanpress/public/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/hexo-oceanpress/public/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+  
+  
+
+          <div class="content page posts-expand">
+            
+
+    
+    
+    
+    <div class="post-block" lang="zh-CN">
+      <header class="post-header">
+
+<h1 class="post-title" itemprop="name headline">
+</h1>
+
+<div class="post-meta">
+  
+  <ul class="breadcrumb">
+          
+            <li><a href="/hexo-oceanpress/public/oceanpress/">OCEANPRESS</a></li>
+            <li><a href="/hexo-oceanpress/public/oceanpress/%E5%86%85%E5%AE%B9%E5%9D%97/">内容块</a></li>
+            <li>5 嵌入内容块</li>
+          
+  </ul>
+
+</div>
+
+</header>
+
+      
+      
+      
+      <div class="post-body">
+          
+<!doctype html>
+<html lang="zh">
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>5 嵌入内容块</title>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vditor/dist/index.css" />
+    
+
+    
+
+    
+    <script src="./../assets/front-end-lib/all_components.js"></script>
+    
+        
+        
+        
+
+
+    
+
+    <link rel="stylesheet" href="./../assets/js_css/theme.css">
+    <link rel="stylesheet" href="./../assets/js_css/github-markdown-css.css">
+</head>
+
+
+
+<main id="static_app_llej" class="markdown-body">
+    <main data-type="NodeDocument" data-n-id="20201117101902-2ewjjum" type="doc" updated="20210512154659" data-n-id="20201117101902-2ewjjum"><h1 data-type="NodeDocument" data-n-id="20201117101902-2ewjjum" type="doc" updated="20210512154659" data-n-id="20201117101902-2ewjjum">5 嵌入内容块</h1>
+<h2 id="概述" updated="20210512154656" data-type="NodeHeading" data-n-id="20210111224435-y1fesd1">概述<a id="vditorAnchor-概述" class="vditor-anchor" href="#概述"><img src="./../assets/icon/alink.png" /></a></h2>
+<p updated="20210512154659" data-type="NodeParagraph" data-n-id="20201224120447-1ros46z">嵌入内容块主要用于汇总所需内容块，通过 <code data-type="NodeCodeSpan">&#123;&#123;</code> 和 <code data-type="NodeCodeSpan">&#125;&#125;</code> 将 SQL 脚本包裹起来并独占一行：<code data-type="NodeCodeSpan">&#123;&#123; SELECT * FROM blocks WHERE content LIKE '%关键字%' &#125;&#125;</code>，数据库表请参考<oceanpress-block-ref src="../%e6%90%9c%e7%b4%a2%e8%bf%9b%e9%98%b6/0%20%e6%95%b0%e6%8d%ae%e5%ba%93%e8%a1%a8.html#20201117103851-l9cahuc" title="这里"><a href="../%e6%90%9c%e7%b4%a2%e8%bf%9b%e9%98%b6/0%20%e6%95%b0%e6%8d%ae%e5%ba%93%e8%a1%a8.html#20201117103851-l9cahuc">这里</a></oceanpress-block-ref >。<em data-type="NodeTag">#内容块/嵌入#</em></p>
+<h2 id="示例" data-type="NodeHeading" data-n-id="20201224120447-e6zyfti">示例<a id="vditorAnchor-示例" class="vditor-anchor" href="#示例"><img src="./../assets/icon/alink.png" /></a></h2>
+<ul updated="20210503152123" data-type="NodeList" data-n-id="20201224120447-znjkoy5">
+<li data-type="NodeListItem" data-n-id="20201224120447-n30ybcs"><span class="ListItemDot"></span>
+<p data-type="NodeParagraph" data-n-id="20201224120447-qmgtpok">查询内容中包含 <code data-type="NodeCodeSpan">内容块</code> 的列表项：</p>
+<pre data-type="NodeCodeBlock" data-n-id="20201224120447-7zxu4l5" class="code-block" data-language="sql"><code>&#123;&#123; SELECT * FROM blocks WHERE content LIKE '%内容块%' AND type = 'i' &#125;&#125;
+</code></pre></li>
+<li data-type="NodeListItem" data-n-id="20201224120447-s8m8new"><span class="ListItemDot"></span>
+<p data-type="NodeParagraph" data-n-id="20201224120447-5c10xrv">查询内容中同时包含 <code data-type="NodeCodeSpan">内容块</code> 和 <code data-type="NodeCodeSpan">引用</code> 段落块：</p>
+<pre data-type="NodeCodeBlock" data-n-id="20201224120447-0y91i5d" class="code-block" data-language="sql"><code>&#123;&#123; SELECT * FROM blocks WHERE content LIKE '%内容块%' AND content LIKE '%引用%' AND type = 'p') &#125;&#125;
+</code></pre></li>
+<li data-type="NodeListItem" data-n-id="20201224120447-7lzhgko"><span class="ListItemDot"></span>
+<p updated="20210503151034" data-type="NodeParagraph" data-n-id="20201224120447-pnqwe31">查询内容中同时包含 <code data-type="NodeCodeSpan">内容块</code> 和 <code data-type="NodeCodeSpan">嵌入</code> 的标题块并按更新时间降序结果取前 2 条：</p>
+<pre data-type="NodeCodeBlock" data-n-id="20201224120447-zgg5lvx" class="code-block" data-language="sql"><code>&#123;&#123; SELECT * FROM blocks WHERE content LIKE '%内容块%' AND content LIKE '%嵌入%' AND type = 'h' ORDER BY updated DESC LIMIT 2 &#125;&#125;
+</code></pre></li>
+</ul>
+<h3 id="案例一" data-type="NodeHeading" data-n-id="20201224120447-fnapz6h">案例一<a id="vditorAnchor-案例一" class="vditor-anchor" href="#案例一"><img src="./../assets/icon/alink.png" /></a></h3>
+<p data-type="NodeParagraph" data-n-id="20201224120447-acd7hwp">查询同时包含 <code data-type="NodeCodeSpan">在思源中</code> 和 <code data-type="NodeCodeSpan">核心概念</code> 文本的段落块，并排除当前文档（否则当段落块也会包含到结果集中，因为当前段落同样包含了这两个文本，下面的案例类似）：</p>
+
+<oceanpress-embedded-block src="../0%20%e8%af%b7%e4%bb%8e%e8%bf%99%e9%87%8c%e5%bc%80%e5%a7%8b.html#20210428212840-8rqwn5o" title="../0 请从这里开始.html#20210428212840-8rqwn5o">
+    <p updated="20210512150241" data-type="NodeParagraph" data-n-id="20210428212840-8rqwn5o">在思源中，唯一重要的核心概念是<oceanpress-block-ref src="../%e5%86%85%e5%ae%b9%e5%9d%97/0%20%e4%bb%80%e4%b9%88%e6%98%af%e5%86%85%e5%ae%b9%e5%9d%97.html#20200813004931-q4cu8na" title="内容块"><a href="../%e5%86%85%e5%ae%b9%e5%9d%97/0%20%e4%bb%80%e4%b9%88%e6%98%af%e5%86%85%e5%ae%b9%e5%9d%97.html#20200813004931-q4cu8na">内容块</a></oceanpress-block-ref >。通过排版格式即可形成内容块，这样我们就能在块级粒度上对思绪和知识进行整理，同时也能方便长文阅读和输出。</p>
+</oceanpress-embedded-block>
+<h3 id="案例二" data-type="NodeHeading" data-n-id="20201224120447-ickbh88">案例二<a id="vditorAnchor-案例二" class="vditor-anchor" href="#案例二"><img src="./../assets/icon/alink.png" /></a></h3>
+<p data-type="NodeParagraph" data-n-id="20201224120447-53y8c84">查询同时包含标签 <code data-type="NodeCodeSpan">#内容块/嵌入#</code> 和 <code data-type="NodeCodeSpan">#内容块/引用#</code> 的段落块：</p>
+
+<oceanpress-embedded-block src="../%e5%86%85%e5%ae%b9%e5%9d%97/2%20%e5%bc%95%e7%94%a8%e5%86%85%e5%ae%b9%e5%9d%97.html#20210104090557-s8jwrnu" title="../内容块/2 引用内容块.html#20210104090557-s8jwrnu">
+    <p data-type="NodeParagraph" data-n-id="20210104090557-s8jwrnu">内容块引用的完整语法是：<code data-type="NodeCodeSpan"> ((id &quot;text&quot;))</code>，其中 <code data-type="NodeCodeSpan">id</code> 形如： <code data-type="NodeCodeSpan">202008250000-a1b2c3d</code>，由时间和 7 位随机字符组成，内容块 id 是在创建内容块时就会自动生成的；后面的 <code data-type="NodeCodeSpan">text</code> 是在引用处对该内容块的自定义锚文本。建立好内容块引用后，鼠标悬浮在锚文本上后将弹出预览浮层，展现被引用的内容块。<em data-type="NodeTag">#内容块/引用#</em></p>
+</oceanpress-embedded-block>
+<h3 id="案例三" data-type="NodeHeading" data-n-id="20201224120447-v7yfh5v">案例三<a id="vditorAnchor-案例三" class="vditor-anchor" href="#案例三"><img src="./../assets/icon/alink.png" /></a></h3>
+<p data-type="NodeParagraph" data-n-id="20201224120447-s5zmpsa">有时候我们可能需要随机漫游显示内容块，以方便回顾。</p>
+</main><div class="oceanpress-backLink"><h2>链接到此文档的相关文档</h2>
+<oceanpress-embedded-block src="../%e9%80%9a%e7%94%a8%e6%93%8d%e4%bd%9c/%e6%97%a5%e8%ae%b0.html#20210110180249-yz7jbt6" title="../通用操作/日记.html#20210110180249-yz7jbt6">
+    <p updated="20210501172601" data-type="NodeParagraph" data-n-id="20210110180249-yz7jbt6">小提示：在指定的模板使用<oceanpress-block-ref src="../%e5%86%85%e5%ae%b9%e5%9d%97/5%20%e5%b5%8c%e5%85%a5%e5%86%85%e5%ae%b9%e5%9d%97.html#20201117101902-2ewjjum" title="嵌入内容块"><a href="../%e5%86%85%e5%ae%b9%e5%9d%97/5%20%e5%b5%8c%e5%85%a5%e5%86%85%e5%ae%b9%e5%9d%97.html#20201117101902-2ewjjum">嵌入内容块</a></oceanpress-block-ref >，可以汇总待办事项或者需要每日查看的内容块。</p>
+</oceanpress-embedded-block>
+
+<oceanpress-embedded-block src="../%e5%86%85%e5%ae%b9%e5%9d%97/0%20%e4%bb%80%e4%b9%88%e6%98%af%e5%86%85%e5%ae%b9%e5%9d%97.html#20210118103020-bjtu89u" title="../内容块/0 什么是内容块.html#20210118103020-bjtu89u">
+    <p updated="20210512154754" data-type="NodeParagraph" data-n-id="20210118103020-bjtu89u">可使用<oceanpress-block-ref src="../%e5%86%85%e5%ae%b9%e5%9d%97/5%20%e5%b5%8c%e5%85%a5%e5%86%85%e5%ae%b9%e5%9d%97.html#20201117101902-2ewjjum" title="嵌入内容块"><a href="../%e5%86%85%e5%ae%b9%e5%9d%97/5%20%e5%b5%8c%e5%85%a5%e5%86%85%e5%ae%b9%e5%9d%97.html#20201117101902-2ewjjum">嵌入内容块</a></oceanpress-block-ref >对命名和备注进行搜索汇总，比如列出备注中包含 <code data-type="NodeCodeSpan">简短</code> 关键字的内容块：</p>
+</oceanpress-embedded-block>
+</div>
+</main>
+
+      </div>
+      
+      
+      
+    </div>
+    
+  <ul class="breadcrumb">
+          
+            <li><a href="/hexo-oceanpress/public/oceanpress/">OCEANPRESS</a></li>
+            <li><a href="/hexo-oceanpress/public/oceanpress/%E5%86%85%E5%AE%B9%E5%9D%97/">内容块</a></li>
+            <li>5 嵌入内容块</li>
+          
+  </ul>
+
+    
+    
+    
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#static_app_llej"><span class="nav-number">1.</span> <span class="nav-text">5 嵌入内容块</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A6%82%E8%BF%B0"><span class="nav-number">1.1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A4%BA%E4%BE%8B"><span class="nav-number">1.2.</span> <span class="nav-text">示例</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A1%88%E4%BE%8B%E4%B8%80"><span class="nav-number">1.2.1.</span> <span class="nav-text">案例一</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A1%88%E4%BE%8B%E4%BA%8C"><span class="nav-number">1.2.2.</span> <span class="nav-text">案例二</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A1%88%E4%BE%8B%E4%B8%89"><span class="nav-number">1.2.3.</span> <span class="nav-text">案例三</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#static_app_llej"><span class="nav-number">1.3.</span> <span class="nav-text">链接到此文档的相关文档</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">John Doe</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/hexo-oceanpress/public/archives/">
+        
+          <span class="site-state-item-count">1</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/hexo-oceanpress/public/lib/anime.min.js"></script>
+  <script src="/hexo-oceanpress/public/lib/velocity/velocity.min.js"></script>
+  <script src="/hexo-oceanpress/public/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/hexo-oceanpress/public/js/utils.js"></script>
+
+<script src="/hexo-oceanpress/public/js/motion.js"></script>
+
+
+<script src="/hexo-oceanpress/public/js/schemes/muse.js"></script>
+
+
+<script src="/hexo-oceanpress/public/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
