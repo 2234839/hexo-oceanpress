@@ -2,6 +2,7 @@
 title: Hello Word
 date: 2021-06-26 01:11:36
 tags:
+sticky: 100
 ---
 
 [hexo-OceanPress/示例项目 github 地址](https://github.com/2234839/hexo-oceanpress)
